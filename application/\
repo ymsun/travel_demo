@@ -1,0 +1,391 @@
+<?php
+class Show extends CI_Controller {
+	function __construct(){
+		parent::__construct();
+		$this->load->library('api');
+		$this->apihost = $this->config->item('api_host');
+	
+	}
+	
+	function _reid($arrs){
+		$ret = array();
+		foreach($arrs as $k =>$v){
+			$ret[$v['id']] = $v;
+		}
+		return $ret;
+	}
+
+	function _retude($tude){
+		$ret = $tude;//3600000;
+		return $ret;
+	
+	}
+	function _json_to_array($web){
+			$arr=array();
+			foreach((array)$web as $k=>$w){
+					if(is_object($w)) { 
+						$arr[$k]= $this->_json_to_array($w); //判断类型是不是object
+					}else {
+						$arr[$k]=$w;
+					}
+			}
+			return $arr;
+	}
+
+	
+	function index($cid='',$page=0){		
+		//echo $this->config->item('api_host');
+		$prolist = $this->api->request($this->apihost.'/provinces');
+		$prolist['httpcode']== 200 ?$prolist = $prolist['data']['items']:exit('api error1');
+		$prolist = $this->_reid($prolist);
+
+		if(isset($_GET['cid'])&&strlen($_GET['cid'])){
+			$pid = $this->api->request($this->apihost.'/getpidbycid/'.(int)$_GET['cid']);
+			$pid = $pid['data']['items']['0']['pid'];
+			$cid = (int)$_GET['cid'];
+		}
+		elseif(isset($_GET['pid'])&&strlen($_GET['pid'])){
+
+			$pid = (int)$_GET['pid'];
+
+
+		}
+		else{
+			$pid = 2;
+		
+		}
+		//cid 优先，有cid先取cid ，没有的话再取pid，再没有取默认pid =2 
+
+		$citylist = $this->api->request($this->apihost.'/province/'.$pid.'/cities');
+		$citylist['httpcode']== 200 ?$citylist = $citylist['data']['items']:exit('api error2');
+		$citylist = $this->_reid($citylist);
+		if($cid==''){
+			if(isset($_GET['cid'])&&strlen($_GET['cid'])){
+				$cid = (int)$_GET['cid'];
+			}
+			else{
+			$cid = array_rand($citylist);
+			}
+		}
+		// info of pro
+		$pro_info = $prolist[$pid];
+
+		//info if city
+		if($page==''){
+			$page =(isset($_GET['p']))?(int)$_GET['p'] : 0;
+		}
+		$pcid = isset($_POST['cid'])? $_POST['cid']: ''; 
+		$ccname = isset($_POST['find'])? $_POST['find']: ''; 
+		if($ccname){
+		$arealist = $this->api->request($this->apihost.'/search?name='.$ccname.'&page='.$page.'&pid='.$pcid);
+		}else{
+		$arealist = $this->api->request($this->apihost.'/city/'.$cid.'/areas/'.$page);
+
+		}
+		$rows = $arealist['data']['rows'];
+		$arealist['httpcode']== 200 ?$arealist = $arealist['data']['items']:exit('api error3');
+		$arrmap = array();
+		$this->load->library('pagination');
+		$config['base_url'] = 'http://travel.ymsun.in1001.com/show/index/city/'.$cid.'/page/';
+		$config['total_rows'] = $rows;
+		$config['per_page'] = 10; 
+		$config['num_links'] = 10;
+		$config['uri_segment'] = 3;
+		$this->pagination->initialize($config); 
+		$road = array();
+		$length = 0;
+		if(count($arealist)){
+			$centtude = array(
+				'long' => '0',
+				'lati' => '0',
+			);
+			foreach($arealist as $k =>$v){
+				$arealist[$k]['hid'] = (int)($k+1);
+				if($k >3){
+					//unset($arealist[$k]);
+				}
+				//$arealist[$k]['longitude'] = $this->_retude($v['latitude']);
+				//$arealist[$k]['latitude'] = $this->_retude($v['longitude']);
+				$centtude['long'] += $arealist[$k]['lgt'];
+				$centtude['lati'] += $arealist[$k]['lat'];
+				$arrmap[] = array(
+					'title' => $v['name'],
+					'content' =>$v['abstract'],
+					'point' =>$arealist[$k]['lat'].'|'.$arealist[$k]['lgt'],
+					'image' =>$v['image'],
+				);
+				$road[$arealist[$k]['lat'].'|'.$arealist[$k]['lgt']]= $v['name'];  
+				if($arealist[$k]['lat']=="" || $arealist[$k]['lgt']==""||$arealist[$k]['lat']==0){
+					$length++;
+				}
+			}
+			$chear = count($arealist)-$length;
+			if($chear==0) $chear = 1;
+			$centtude['long'] = $centtude['long']/$chear;
+			$centtude['lati'] = $centtude['lati']/$chear;
+			//print_r($centtude);
+		}
+		else{
+			$centtude = array(
+				'long' => '39.921901',
+				'lati' => '116.403023',
+			);
+
+		}
+		$roadsel = array(
+			'start' => $this->api->html_select($road,'start','start'),
+			'end' => $this->api->html_select($road,'end','end'),
+
+		);
+		$area = $this->api->request($this->apihost.'/getpidbycid/'.$pid);
+		$area['httpcode']== 200 ?$area = $area['data']['items']:exit('api error');
+		$area_useful =  array();
+		$area_attention =  array();
+		$area_business =  array();
+		$area_goods =  array();
+		$area_shopping_desc =  '';
+		if($area[0]['traffic']!=""){
+			$area_traffic = json_decode($area[0]['traffic'],true);
+			$area_traffic = isset($area_traffic['local']); 
+		}
+		if($area[0]['dining']!=""){
+			$area_dining= json_decode($area[0]['dining'],true);
+			$area_dining= isset($area_dining['food']); 
+		}
+		$aaa = array();
+		$area = $area[0];	
+		if($area['geo_his']!=''&& $area['geo_his']!='""' &&$area['geo_his']!='null'){
+			$area_geo_his= json_decode($area['geo_his'], true);
+			$area_geo_his= $area_geo_his['list'];
+		}
+		if($area['shopping']!=''&& $area['shopping']!='""'){
+			$area_shopping= json_decode($area['shopping'],true);
+			if(isset($area_shopping['goods'])){
+				$area_goods = $area_shopping['goods'];
+			}
+			if(isset($area_shopping['business'])){
+				$area_business= $area_shopping['business'];
+			}
+			if(isset($area_shopping['desc'])){
+				$area_shopping_desc= $area_shopping['desc'];
+			}
+		}
+		$area_desc = '';
+		if($area['attention']!=''&& $area['attention']!='""'){
+			$area_attention = json_decode($area['attention'],true);
+			if(!isset($area_attention['desc'])){
+				foreach($area_attention['list'] as $k => $v){
+					$area_desc .= $v['desc'].'<br>'; 
+				}
+			}
+		}
+		if($area['useful']!=''&& $area['useful']!='""'){
+			$area_useful= json_decode($area['useful']);
+			$area_useful= $this->_json_to_array($area_useful);
+			$area_useful= $this->_json_to_array($area_useful['list']);
+		}
+		$data = array(
+			'prolist' =>$prolist,
+			'citylist' =>$citylist,
+			'pro_info' =>$pro_info,
+			'arealist' =>$arealist,
+			'jsonmap'  =>json_encode($arrmap),
+			'cent'    => $centtude,
+			'road' =>$roadsel,
+			'pid' =>$pid,
+			'cid' =>$cid,
+			'area' =>$area,
+			'area_traffic' => $area_traffic, 
+			'area_dining' => $area_dining, 
+			'area_useful' => $area_useful, 
+			'area_attention' => $area_attention, 
+			'area_desc' => $area_desc,
+			'area_goods' => $area_goods, 
+			'area_shopping_desc' => $area_shopping_desc, 
+			'area_business' => $area_business, 
+			'area_geo_his' => $area_geo_his, 
+			'page' =>  $this->pagination->create_links(),
+		);
+
+		//echo "<pre>"; print_r($arealist);exit;
+
+		$this->smarty->view('areas.tpl',$data);
+	}
+	function showarea(){		
+		strlen($_GET['aid']) ? $aid = (int)$_GET['aid'] : exit('No aid ,exit');
+		$areainfo = $this->api->request($this->apihost.'/area/'.$aid);
+		$ainfo = $areainfo['data']['items']['0'];
+		$scene_pic = array();
+		$scene_traffic = array(); 
+		$scene_dining = array();
+		$scene_line = array(); 
+		$scene_geo_his = array(); 
+		$scene_around_scene =  array();
+		$scene_useful =  array();
+		$scene_attention =  array();
+		$scene_business =  array();
+		$scene_goods =  array();
+		$scene_shopping_desc =  '';
+
+		$scene_pic = json_decode($ainfo['scene_pic']);
+		$scene_pic = $this->_json_to_array($scene_pic[0]);
+		
+		if($ainfo['dining']!=''&& $ainfo['dining']!='""'){
+			$scene_dining = json_decode($ainfo['dining']);
+			$scene_dining = $this->_json_to_array($scene_dining);
+		}	
+		if($ainfo['line']!=''&& $ainfo['line']!='""'){
+			$scene_line = json_decode($ainfo['line']);
+			$scene_line = $this->_json_to_array($scene_line);
+			$scene_line = $this->_json_to_array($scene_line['list']);
+		}
+		if($ainfo['geo_his']!=''&& $ainfo['geo_his']!='""' &&$ainfo['geo_his']!='null'){
+			$scene_geo_his= json_decode($ainfo['geo_his']);
+			$scene_geo_his= $this->_json_to_array($scene_geo_his);
+			$scene_geo_his= $this->_json_to_array($scene_geo_his['list']);
+		}
+
+		$scene_around_scene= json_decode($ainfo['around_scene']);
+		$scene_around_scene= $this->_json_to_array($scene_around_scene);
+
+		if($ainfo['traffic']!=''&& $ainfo['traffic']!='""'){
+			$scene_traffic = json_decode($ainfo['traffic']);
+			$scene_traffic = $this->_json_to_array($scene_traffic);
+			$scene_traffic = $this->_json_to_array($scene_traffic['local']);
+		}
+		if($ainfo['shopping']!=''&& $ainfo['shopping']!='""'){
+			$scene_shopping= json_decode($ainfo['shopping'],true);
+			if($scene_shopping['goods']){
+				$scene_goods = $scene_shopping['goods'];
+			}
+			if($scene_shopping['business']){
+				$scene_business= $scene_shopping['business'];
+			}
+			if($scene_shopping['desc']){
+				$scene_shopping_desc= $scene_shopping['desc'];
+			}
+		}
+
+		if($ainfo['attention']!=''&& $ainfo['attention']!='""'){
+			$scene_attention = json_decode($ainfo['attention'],true);
+			if(!$scene_attention['desc']){
+				foreach($scene_attention['list'] as $k => $v){
+					$scene_attention['desc'] .= $v['desc'].'<br>'; 
+				}
+			}
+		}
+
+		if($ainfo['useful']!=''&& $ainfo['useful']!='""'){
+			$scene_useful= json_decode($ainfo['useful']);
+			$scene_useful= $this->_json_to_array($scene_useful);
+			$scene_useful= $this->_json_to_array($scene_useful['list']);
+		}
+		$scenicinfo = $this->api->request($this->apihost.'/area/'.$aid.'/scenics');
+		$sinfo = $scenicinfo['data']['items'];
+		$arrmap = array();
+		$length = 0;
+		if(count($sinfo)>0){
+			$centtude = array(
+				'long' => '0',
+				'lati' => '0',
+			);
+			foreach($sinfo as $k => $v){
+				//$sinfo[$k]['longitude'] = $this->_retude($v['latitude']);
+				//$sinfo[$k]['latitude'] = $this->_retude($v['longitude']);
+				$centtude['long'] += $sinfo[$k]['lgt'];
+				$centtude['lati'] += $sinfo[$k]['lat'];
+				$arrmap[] = array(
+					'title' => $v['name'],
+					'content' =>$v['abstract'],
+					'point' =>$sinfo[$k]['lat'].'|'.$sinfo[$k]['lgt'],
+					'image' =>$v['image'],
+				);
+				if($sinfo[$k]['lat']=="" || $sinfo[$k]['lgt']==""||$sinfo[$k]['lat']==0){
+					$length++;
+				}
+			}
+			$chear = count($sinfo)-$length;
+			if($chear==0) $chear = 1;
+			$centtude['long'] = $centtude['long']/$chear;
+			$centtude['lati'] = $centtude['lati']/$chear;
+		
+		}
+		else{
+			$centtude = array(
+				'long' => '39.921901',
+				'lati' => '116.403023',
+			);
+
+		
+		}
+		foreach($sinfo as $k =>$v){
+			$sinfo[$k]['hid'] = $k+1;
+
+		}
+		$data = array(
+			'ainfo' =>$ainfo,
+			'sinfo'  =>$sinfo,
+			'cent'    => $centtude,
+			'jsonmap'  =>json_encode($arrmap),
+			'scene_pic' =>$scene_pic,
+			'scene_traffic' =>$scene_traffic, 
+			'scene_dining' =>$scene_dining, 
+			'scene_line' =>$scene_line, 
+			'scene_geo_his' =>$scene_geo_his, 
+			'scene_around_scene' =>$scene_around_scene, 
+			'scene_attention' =>$scene_attention,
+			'scene_useful' =>$scene_useful,
+			'scene_goods' =>$scene_goods,
+			'scene_shopping_desc' =>$scene_shopping_desc,
+			'scene_business' =>$scene_business,
+			);
+		//echo "<pre>";var_dump($data);exit;
+		$this->smarty->view('area.tpl',$data);
+	}
+	function showpoints(){
+		strlen($_GET['sid'])  ? $sid = (int)$_GET['sid'] :NULL;
+		$points = $this->api->request($this->apihost.'/scenic/'.$sid.'/points');
+		$points = $points['data']['items'];
+		$arrmap = array();
+		if(count($points)){
+			$centtude = array(
+				'long' => '0',
+				'lati' => '0',
+			);
+			foreach($points as $k =>$v){
+				$points[$k]['hid'] = $k+1;
+				$points[$k]['longitude'] = $this->_retude($v['latitude']);
+				$points[$k]['latitude'] = $this->_retude($v['longitude']);
+				$centtude['long'] += $points[$k]['longitude'];
+				$centtude['lati'] += $points[$k]['latitude'];
+				$arrmap[] = array(
+					'title' => $v['name'],
+					'content' =>$v['note'],
+					'point' =>$points[$k]['latitude'].'|'.$points[$k]['longitude'],
+					'image' =>$v['image'],
+				);
+			}
+			$centtude['long'] = $centtude['long']/count($points);
+			$centtude['lati'] = $centtude['lati']/count($points);
+		
+			
+		}
+		else{
+			$centtude = array(
+				'long' => '39.921901',
+				'lati' => '116.403023',
+			);
+		
+		}
+		$data = array(
+			'points' =>$points,
+			'cent'    => $centtude,
+			'jsonmap'  =>json_encode($arrmap),
+
+		);
+		//echo "<pre>";print_r($data);exit;
+		$this->smarty->view('point.tpl',$data);
+
+	}
+
+}

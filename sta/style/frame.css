@@ -1,0 +1,2971 @@
+
+@charset "utf-8";
+.page a {
+    display: inline-block;
+    line-height: 18px;
+    margin: 0 4px;
+    padding: 0 6px;
+}
+.page a, .page a:visited {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #DADADA;
+    color: #373737;
+    text-decoration: none;
+}
+.page a:hover, .page a.b {
+    background: none repeat scroll 0 0 #B0B0B0;
+    border: 1px solid #DADADA;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.join-area {
+    float: left;
+    height: 38px;
+    margin-top: -10px;
+    overflow: hidden;
+    position: relative;
+    width: 146px;
+    z-index: 10;
+}
+.join {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -149px -293px transparent;
+    color: #3D3C3C;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    left: 0;
+    line-height: 34px;
+    padding-left: 40px;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 84px;
+}
+.join:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -149px -328px transparent;
+    color: #3D3C3C;
+    height: 35px;
+    width: 84px;
+}
+.join.act-join {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -149px -518px transparent;
+    color: #3D3C3C;
+    height: 35px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 84px;
+}
+.drop-down {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -273px -293px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 23px;
+}
+.drop-down:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -273px -328px transparent;
+    height: 35px;
+    width: 23px;
+}
+.shadow {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -110px -365px transparent;
+    height: 7px;
+    position: absolute;
+    right: 185px;
+    top: -24px;
+    width: 5px;
+}
+.been {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -115px -365px transparent;
+    cursor: pointer;
+    height: 50px;
+    position: absolute;
+    right: 88px;
+    top: -24px;
+    width: 97px;
+}
+.been:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -115px -416px transparent;
+    height: 50px;
+    position: absolute;
+    right: 88px;
+    top: -24px;
+    width: 97px;
+}
+.been.act-been {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -115px -467px transparent;
+    height: 50px;
+    position: absolute;
+    right: 88px;
+    top: -24px;
+    width: 97px;
+}
+.wantgo {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -212px -365px transparent;
+    cursor: pointer;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: -24px;
+    width: 88px;
+}
+.wantgo:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -212px -415px transparent;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: -25px;
+}
+.wantgo.act-wantgo {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -212px -467px transparent;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: -24px;
+    width: 88px;
+}
+.sma-join {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -347px transparent;
+    color: #3D3C3C;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 24px;
+    text-decoration: none;
+    width: 91px;
+}
+.sma-join:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -372px transparent;
+    color: #3D3C3C;
+    height: 22px;
+    width: 91px;
+}
+.sma-join.act-sma-join {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -397px transparent;
+    color: #3D3C3C;
+    height: 22px;
+    width: 91px;
+}
+.sma-join2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -188px -1343px transparent;
+    color: #3D3C3C;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 20px;
+    text-decoration: none;
+    width: 55px;
+}
+.sma-join2:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -188px -1366px transparent;
+}
+.sma-join2.act-sma-join2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -188px -1389px transparent;
+}
+.sma-drop-down {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    width: 15px;
+    z-index: -1;
+}
+.sma-drop-down:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -75px -372px transparent;
+    height: 22px;
+    width: 15px;
+}
+.sma-been {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -422px transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    width: 68px;
+}
+.sma-been:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -446px transparent;
+    height: 22px;
+    width: 68px;
+}
+.sma-been.act-sma-been {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -470px transparent;
+    height: 22px;
+    width: 68px;
+}
+.sma-wantgo {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -232px -893px transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    width: 68px;
+}
+.sma-wantgo:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -232px -917px transparent;
+    height: 22px;
+    width: 68px;
+}
+.sma-wantgo.act-sma-wantgo {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -232px -941px transparent;
+    height: 22px;
+    width: 68px;
+}
+.section {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #373737;
+    padding-bottom: 15px;
+}
+.container {
+    float: right;
+    position: relative;
+    width: 488px;
+    z-index: 10;
+}
+.container2 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 980px;
+}
+.container-drop {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E6E6E6;
+    left: -2px;
+    padding: 10px;
+    position: absolute;
+    top: 24px;
+    z-index: 999;
+}
+.container-drop li {
+    line-height: 18px;
+    padding-bottom: 2px;
+}
+.container span {
+    float: right;
+}
+.container-drop2, .container-drop3 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E6E6E6;
+    padding: 8px;
+    position: absolute;
+    right: -104px;
+    top: 23px;
+    width: 175px;
+    z-index: 101;
+}
+.container-drop2 li, .container-drop3 li {
+    line-height: 14px;
+    padding-bottom: 1px;
+}
+.p-show {
+    float: left;
+    width: 595px;
+}
+.p-show-img {
+    border: 1px solid #DADADA;
+    box-shadow: 0 0 5px #A6A6A6;
+    height: 380px;
+    padding: 10px;
+    text-align: center;
+    width: 570px;
+}
+.p-show p {
+    display: inline-block;
+    width: 535px;
+}
+.p-show p a {
+    padding: 0 3px;
+}
+.p-show span {
+    color: #0080C9;
+    float: right;
+}
+.p-show span b {
+    margin-left: 20px;
+}
+.plist {
+    float: right;
+    width: 310px;
+}
+.plist-show {
+    height: 440px;
+    overflow: hidden;
+}
+.plist-show li {
+    float: left;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.plist-show li a img, .plist-show li a img:visited, .plist-show li a img:hover {
+    border: 2px solid #FFFFFF;
+    height: 75px;
+    width: 75px;
+}
+.plist-show li.act a img {
+    border: 2px solid #FC851E;
+    height: 75px;
+    width: 75px;
+}
+.p-show-sep {
+    background: url("../images/p_show.jpg") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 452px;
+    width: 22px;
+}
+.search-content2 {
+    padding-left: 15px;
+    width: 650px;
+}
+.area-search-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -170px -894px transparent;
+    border: 0 none;
+    display: inline-block;
+    float: left;
+    height: 23px;
+    width: 33px;
+}
+.area-search-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -170px -918px transparent;
+    height: 23px;
+    width: 33px;
+}
+.area-search-box {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -894px transparent;
+    border: 0 none;
+    display: inline-block;
+    float: left;
+    height: 23px;
+    line-height: 23px;
+    padding-left: 5px;
+    width: 165px;
+}
+.area-search li {
+    color: #484848;
+    line-height: 30px;
+}
+.area-search li span {
+    float: right;
+    padding-right: 230px;
+    right: -100px;
+}
+.area-search li a {
+    display: inline-block;
+    padding: 0 4px;
+}
+.box-left {
+    float: left;
+    width: 618px;
+}
+.box-rig {
+    float: right;
+}
+.seclect-con {
+    padding-top: 10px;
+}
+.seclect-con a {
+    border: 1px solid #E7E7E7;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 2px 3px;
+}
+.seclect-con a:hover {
+    border: 1px solid #DBDBDB;
+}
+.area-list dt {
+    float: left;
+    margin-right: 13px;
+}
+.area-list dt img {
+    border: 1px solid #D9D9D9;
+    padding: 2px;
+}
+.area-list dd {
+    line-height: 22px;
+}
+.area-list2 {
+    overflow: hidden;
+    position: relative;
+}
+.area-list2 dt {
+    float: left;
+    margin-right: 13px;
+}
+.area-list2 dt img {
+    border: 1px solid #D9D9D9;
+    padding: 2px;
+}
+.area-list2 dd {
+    line-height: 22px;
+}
+.been-visited a {
+    display: inline-block;
+}
+.been-visited img {
+    float: left;
+    margin: 2px;
+}
+.slide-map, .slide-map2 {
+    border: 1px solid #D6D8D8;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    box-shadow: 0 0 1px #A6A6A6;
+    height: 437px;
+    margin: 10px 0 30px;
+    position: relative;
+    width: 320px;
+}
+.slide-map {
+    margin-right: -27px;
+}
+.slide-map-ico, .slide-map-ico2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -497px transparent;
+    height: 7px;
+    position: absolute;
+    right: -1px;
+    top: -7px;
+    width: 7px;
+}
+.plug {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -944px transparent;
+    border: 0 none;
+    color: #333333;
+    cursor: pointer;
+    height: 23px;
+    line-height: 22px;
+    width: 78px;
+}
+.plug:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -969px transparent;
+    color: #141414;
+    height: 23px;
+    width: 78px;
+}
+.pic-on {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -995px transparent;
+    border: 0 none;
+    color: #333333;
+    cursor: pointer;
+    height: 23px;
+    line-height: 22px;
+    width: 63px;
+}
+.pic-on:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1020px transparent;
+    color: #141414;
+    height: 23px;
+    width: 63px;
+}
+.pic-next {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -62px -995px transparent;
+    border: 0 none;
+    color: #333333;
+    cursor: pointer;
+    height: 23px;
+    line-height: 22px;
+    width: 65px;
+}
+.pic-next:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -62px -1020px transparent;
+    color: #141414;
+    height: 23px;
+    width: 65px;
+}
+.relative {
+    position: relative;
+    width: 650px;
+}
+.secitem {
+    clear: both;
+    overflow: hidden;
+}
+.secitem span, .secitem a {
+    display: inline-block;
+    float: left;
+    white-space: nowrap;
+}
+.secitem dt {
+    float: left;
+    line-height: 26px;
+}
+.secitem dd {
+    display: block;
+    line-height: 26px;
+    overflow: hidden;
+}
+.secitem a {
+    margin-right: 1em;
+}
+.subarea {
+    border: 1px solid #F0F0F0;
+    clear: both;
+    margin: 3px 0;
+    overflow: hidden;
+    padding: 3px 10px;
+}
+.reach-box {
+    height: 87px;
+    margin: 20px auto;
+    position: relative;
+    width: 980px;
+}
+.reach-bg {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 87px;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 980px;
+}
+.reach {
+    height: 47px;
+    padding: 20px;
+    position: absolute;
+    width: 940px;
+    z-index: 1;
+}
+.reach-slogan {
+    float: left;
+    line-height: 26px;
+    width: 370px;
+}
+.reach-sep {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -298px -31px transparent;
+    display: inline-block;
+    float: left;
+    height: 54px;
+    margin-left: 40px;
+    margin-right: 15px;
+    width: 2px;
+}
+.reach-man {
+    float: left;
+    height: 38px;
+    line-height: 38px;
+    width: 470px;
+}
+.reach-man a {
+    display: inline-block;
+}
+.reach-man a img {
+    padding: 5px 3px;
+}
+.destinations-map {
+    box-shadow: 0 0 3px #A6A6A6;
+    margin: 15px auto;
+    padding: 15px;
+    text-align: center;
+    width: 865px;
+}
+.map-title {
+    position: relative;
+    width: 400px;
+}
+.reach-map {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1082px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 56px;
+    position: absolute;
+    right: 141px;
+    top: -24px;
+    width: 147px;
+}
+.reach-map:hover, .reach-map.map {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1142px transparent;
+    height: 56px;
+    position: absolute;
+    right: 141px;
+    top: -24px;
+    width: 147px;
+}
+.class-title {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -147px -1082px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 56px;
+    position: absolute;
+    right: 0;
+    top: -24px;
+    width: 141px;
+}
+.class-title:hover, .class-title.class {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -147px -1142px transparent;
+    height: 56px;
+    position: absolute;
+    right: 0;
+    top: -24px;
+    width: 141px;
+}
+.map-shaw {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -110px -365px transparent;
+    display: inline-block;
+    height: 7px;
+    position: absolute;
+    right: 287px;
+    top: -24px;
+    width: 5px;
+}
+.raech-class, .raech-class2 {
+    float: left;
+}
+.raech-class li, .raech-class2 li {
+    line-height: 30px;
+}
+.raech-class a {
+    display: inline-block;
+    padding: 0 6px;
+}
+.raech-class2 a {
+    color: #666666;
+    display: inline-block;
+    padding: 0 6px;
+}
+.raech-class span, .raech-class2 span {
+    padding-right: 6px;
+}
+.w430 {
+    width: 440px;
+}
+.draw {
+    background: url("../images/draw_bg.jpg") no-repeat scroll right bottom #FFFFFF;
+}
+.share {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -83px -944px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    width: 98px;
+}
+.share:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -83px -969px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    width: 98px;
+}
+.food-list {
+    border: 1px solid #E8E8E8;
+    height: 115px;
+    position: relative;
+    width: 445px;
+}
+.food-list dt {
+    left: 0;
+    position: absolute;
+    top: -1px;
+}
+.food-list dd {
+    left: 130px;
+    position: absolute;
+    top: 5px;
+    width: 292px;
+}
+.food-list dd p {
+    line-height: 22px;
+}
+.food-list dd.share-btn {
+    left: 343px;
+    position: absolute;
+    top: 88px;
+    width: 98px;
+    z-index: 22;
+}
+.weather-box {
+    background: none repeat scroll 0 0 #FEFEFE;
+    border-left: 1px solid #EFEFEF;
+    border-top: 1px solid #EFEFEF;
+}
+.weather-box thead {
+    background: url("../images/weather_top.jpg") repeat-x scroll 0 0 transparent;
+    font-size: 14px;
+    height: 41px;
+}
+.weather-box td {
+    border-color: #FFFFFF #F2F2F2 #EFEFEF #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    color: #7F7F7F;
+    height: 39px;
+    line-height: 38px;
+    text-align: center;
+}
+.weather-box td.text-left {
+    padding-left: 20px;
+    text-align: left;
+}
+.dark-bg {
+    background: none repeat scroll 0 0 #F9F9F9;
+}
+.weather-box td.dark-font {
+    color: #484848;
+}
+.weather-box thead td {
+    color: #484848;
+}
+.order-box {
+    background: none repeat scroll 0 0 #FEFEFE;
+    border-left: 1px solid #EFEFEF;
+    border-top: 1px solid #EFEFEF;
+}
+.order-box thead {
+    background: url("../images/weather_top.jpg") repeat-x scroll 0 0 transparent;
+    font-size: 12px;
+    height: 30px;
+}
+.order-box td {
+    border-color: #FFFFFF #F2F2F2 #EFEFEF #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    color: #7F7F7F;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+.order-box td.text-left {
+    padding-left: 20px;
+    text-align: left;
+}
+.order-box td.dark-font {
+    color: #484848;
+}
+.order-box thead td {
+    color: #484848;
+}
+.chose-photo {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border: 7px solid #FCFCFC;
+    box-shadow: 0 0 5px #A6A6A6;
+    display: inline-block;
+    height: 266px;
+    width: 355px;
+}
+.upload-photo-left {
+    float: left;
+    text-align: left;
+    width: 65px;
+}
+.add-photo {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -100px -62px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 19px;
+    width: 19px;
+}
+.add-photo:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -121px -62px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 19px;
+    width: 19px;
+}
+.w425 {
+    position: relative;
+    width: 425px;
+}
+.line-h24 {
+    line-height: 24px;
+}
+.line-h40 {
+    line-height: 40px;
+}
+.separator {
+    background: url("../images/separator.png") no-repeat scroll 0 0 transparent;
+    height: 13px;
+    width: 424px;
+}
+.w490 {
+    width: 490px;
+}
+.w580 {
+    width: 580px;
+}
+.seek {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px solid #D8D8D8;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 125px;
+    left: -27px;
+    padding: 15px 45px 15px 25px;
+    position: absolute;
+    top: 8px;
+    width: 378px;
+}
+.h185 {
+    height: 165px;
+}
+.seek-ico {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -258px -10px transparent;
+    height: 8px;
+    left: -28px;
+    position: absolute;
+    top: 0;
+    width: 8px;
+}
+.seek-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -151px -1005px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 37px;
+    width: 147px;
+}
+.seek-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -151px -1043px transparent;
+}
+.seek-btn2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1887px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    width: 95px;
+}
+.seek-btn2:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1920px transparent;
+}
+.rig-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -209px -171px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 53px;
+    position: absolute;
+    right: 13px;
+    top: 40%;
+    width: 29px;
+}
+.rig-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -242px -171px transparent;
+    right: 13px;
+    top: 40%;
+}
+.left-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -7px -499px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 53px;
+    left: 13px;
+    position: absolute;
+    top: 40%;
+    width: 29px;
+}
+.left-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -38px -499px transparent;
+    left: 13px;
+    position: absolute;
+    top: 40%;
+}
+.provices-photo {
+    position: relative;
+    z-index: 1;
+}
+.w490-photo {
+    background: none repeat scroll 0 0 #F1F1F1;
+    border: 1px solid #E7E7E7;
+    height: 350px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 490px;
+}
+.v_bigfoto {
+    width: 490px;
+}
+.v_bigfoto2 {
+    width: 570px;
+}
+.v_bigfoto, .v_bigfoto2 {
+    display: table-cell;
+    height: 350px;
+    text-align: center;
+    vertical-align: middle;
+}
+.v_bigfoto img, .v_bigfoto2 img {
+    vertical-align: middle;
+}
+.map-list {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: 9999;
+}
+.map-list li {
+    background: none repeat scroll 0 0 #E5E5E5;
+    cursor: pointer;
+    float: left;
+    padding: 7px 15px;
+}
+.map-list li.act04 {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.section-left {
+    padding: 20px 15px 65px 20px;
+    width: 578px;
+}
+.section-rig {
+    padding: 20px 20px 15px 15px;
+    width: 332px;
+}
+.section-rig2 {
+    padding: 20px 0 15px;
+    width: 367px;
+}
+.section-bg {
+    background: url("../images/section_bg.jpg") repeat-y scroll right center #FFFFFF;
+}
+.section-left h2, .section-rig h2, .page-rig h2, .section-rig2 h2, .page-left h2, .aside_n h2, .article_n h2 {
+    padding-bottom: 10px;
+    width: 100%;
+}
+.section-bor {
+    border-bottom: 1px solid #EFEFEF;
+}
+.posi-re {
+    position: relative;
+}
+.h-right {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.region-list li {
+    background: none repeat scroll 0 0 #F4F4F4;
+    float: left;
+    height: 50px;
+    margin-bottom: 15px;
+    position: relative;
+    width: 133px;
+}
+.region-list li img {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.region-list li p {
+    left: 60px;
+    position: absolute;
+    top: 15px;
+}
+.new-pro {
+    overflow: hidden;
+}
+.new-pro li.pho {
+    float: left;
+    width: 70px;
+}
+.new-pro li.other {
+    float: left;
+    width: 508px;
+}
+.new-pro li.other2 {
+    float: left;
+    width: 408px;
+}
+.new-pro li.other3 {
+    float: left;
+    width: 308px;
+}
+.new-pro li.other4 {
+    float: left;
+    width: 645px;
+}
+.problem li {
+    line-height: 21px;
+}
+.problem li.text-rig {
+    text-align: right;
+}
+.w100 {
+    width: 100%;
+}
+.font-bg {
+    background: none repeat scroll 0 0 #F4F4F4;
+    padding: 6px;
+    position: relative;
+    width: 95%;
+}
+.font-bg2 {
+    background: none repeat scroll 0 0 #F4F4F4;
+    padding: 6px;
+    position: relative;
+    width: 90%;
+}
+.font-bg4 {
+    background: none repeat scroll 0 0 #F4F4F4;
+    padding: 6px;
+    width: 595px;
+}
+.font-bg3 {
+    background: none repeat scroll 0 0 #F4F4F4;
+    padding: 7px 7px 0;
+    width: 123px;
+}
+.font-bg-small {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -260px 0 transparent;
+    display: inline-block;
+    height: 7px;
+    left: -5px;
+    position: absolute;
+    top: 10px;
+    width: 6px;
+}
+.answer-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1051px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 21px;
+    width: 85px;
+}
+.answer-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -213px -967px transparent;
+}
+.attention {
+    height: 24px;
+    position: relative;
+}
+.attention ul {
+    position: absolute;
+}
+.attention li {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px solid #F4F4F4;
+    cursor: pointer;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 5px;
+    padding: 0 12px;
+}
+.attention li.current {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+.bor-bom {
+    border-bottom: 1px solid #EFEFEF;
+    bottom: -1px;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.like a {
+    color: #A6A6A6;
+    cursor: pointer;
+    display: inline-block;
+}
+.like i {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -142px -65px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    vertical-align: middle;
+    width: 17px;
+}
+.like a:hover i {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -162px -65px transparent;
+}
+.like a:hover {
+    color: #A6A6A6;
+    text-decoration: none;
+}
+.like i.act05 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -162px -65px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    vertical-align: middle;
+    width: 17px;
+}
+.w50 {
+    width: 40%;
+}
+.wid50 {
+    width: 50px;
+}
+.pr20 {
+    padding-right: 20px;
+}
+.p3-font a {
+    display: inline-block;
+    padding: 0 3px;
+}
+.pt3l3 a {
+    padding: 5px 3px;
+}
+.del-font {
+    text-decoration: line-through;
+}
+.ranking-ico {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -153px -172px transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 39px;
+    line-height: 20px;
+    padding-left: 2px;
+    text-align: center;
+    width: 24px;
+}
+.ranking-ico2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -277px -1949px transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 39px;
+    line-height: 20px;
+}
+.ranking-ico2 b {
+    background: none repeat scroll 0 0 #85C4E7;
+    margin-left: 4px;
+    padding: 3px 7px;
+}
+.ranking {
+    overflow: hidden;
+    width: 100%;
+}
+.ranking li {
+    float: left;
+}
+.ranking li.global {
+    width: 397px;
+}
+.ranking li.spe {
+    float: right;
+    padding-right: 10px;
+    width: 70px;
+}
+.ranking li.spe2 {
+    float: right;
+    padding-right: 10px;
+    width: 150px;
+}
+.ranking li.spe3 {
+    padding-left: 5px;
+    width: 100px;
+}
+.ranking li.spe4 {
+    padding-left: 5px;
+    width: 400px;
+}
+.ranking li p span {
+    line-height: 24px;
+}
+.commont-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -136px -99px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 34px;
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 125px;
+}
+.commont-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -136px -134px transparent;
+}
+.more-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    left: -20px;
+    padding: 0 20px 10px;
+    position: absolute;
+    top: 0;
+    width: 425px;
+    z-index: 999;
+}
+.more-box2 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    left: -20px;
+    padding: 0 20px 10px;
+    position: absolute;
+    top: 0;
+    width: 425px;
+    z-index: 999;
+}
+.h50 {
+    height: 50px;
+}
+.p10 {
+    padding: 10px;
+}
+.small-nav a {
+    padding: 10px;
+}
+.homepage-bg {
+    background: url("../images/home_page_bg.jpg") repeat-y scroll left center #FFFFFF;
+}
+.page-left {
+    padding-bottom: 60px;
+    width: 199px;
+}
+.my-photo {
+    height: 200px;
+    overflow: hidden;
+    width: 199px;
+}
+.mphoto-list {
+    color: #333333;
+}
+.mphoto-list li {
+    height: 28px;
+    position: relative;
+}
+.mphoto-list span {
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    width: 25px;
+}
+.mphoto-list b {
+    background: none repeat scroll 0 0 #F98518;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 0 5px;
+    position: absolute;
+    right: 15px;
+    top: 7px;
+}
+.mphoto-list a:hover {
+    color: #000000;
+}
+.mphoto-list a {
+    display: block;
+    height: 16px;
+    padding: 6px 0;
+}
+.mphoto-list a.actinve1 {
+    background: none repeat scroll 0 0 #DDDDDD;
+}
+.ico-index {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1217px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.ico-profile {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1241px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.ico-stamp {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1265px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.ico-go {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1289px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.ico-plan {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1313px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.ico-card {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1337px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.ico-order {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1361px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.ico-friend {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -282px -1765px transparent;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 0 12px 0 18px;
+    width: 18px;
+}
+.page-rig {
+    padding: 20px;
+    width: 740px;
+}
+.album {
+    height: 250px;
+    position: relative;
+    width: 245px;
+}
+.album-close {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -290px -1083px transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 10px;
+    width: 10px;
+    z-index: 999;
+}
+.album-close:hover, .album-close3:hover, .album-close4:hover, .album-close5:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -290px -1095px transparent;
+}
+.album-close2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -92px -1545px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-close2:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -111px -1545px transparent;
+}
+.album-close3 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -290px -1083px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    right: 32px;
+    top: 3px;
+    width: 10px;
+    z-index: 999;
+}
+.album-close4 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -290px -1083px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    right: 16px;
+    width: 10px;
+    z-index: 999;
+}
+.album-close5 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -290px -1083px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    width: 10px;
+    z-index: 999;
+}
+.album-add {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -131px -1545px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-add:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -151px -1545px transparent;
+}
+.album-edit {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -171px -1545px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-edit:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -191px -1545px transparent;
+}
+.album-ok {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -211px -1545px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-ok:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -231px -1545px transparent;
+}
+.album-join {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -16px -1564px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-join:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -35px -1564px transparent;
+}
+.album-been {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -54px -1564px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-been:hover, .album-been-act07 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -73px -1564px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-wgo {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -92px -1564px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.album-wgo:hover, .album-wgo-act08 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -111px -1564px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin-left: 2px;
+    position: relative;
+    width: 14px;
+}
+.post-a-ico {
+    bottom: 12px;
+    position: absolute;
+    right: 10px;
+}
+.album-top {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DEDEDE;
+    padding: 10px;
+    position: absolute;
+    width: 196px;
+    z-index: 99;
+}
+.album-bottom {
+    border: 1px solid #DEDEDE;
+    height: 216px;
+    left: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 8px;
+    width: 198px;
+}
+.album-list {
+    padding-top: 4px;
+    width: 197px;
+}
+.album-list span {
+    background: none repeat scroll 0 0 #E8E8E8;
+    display: block;
+    height: 48px;
+    width: 48px;
+}
+.mrig2 {
+    margin-right: 2px;
+}
+.mbom2 {
+    margin-bottom: 2px;
+}
+.album-list a, .album-list span {
+    display: block;
+    float: left;
+}
+.ml50 {
+    margin-left: 50px;
+}
+.my-want-list li {
+    float: left;
+    text-align: center;
+}
+.my-want-list li img {
+    border: 1px solid #D9D9D9;
+    padding: 2px;
+}
+.ml40 {
+    margin-left: 40px;
+}
+.sma-box-left {
+    width: 480px;
+}
+.sma-box-rig {
+    background: none repeat scroll 0 0 #F1F8FE;
+    border-radius: 8px 8px 8px 8px;
+    padding: 15px 10px 50px;
+    width: 200px;
+}
+.fans {
+    overflow: hidden;
+}
+.fans li {
+    float: left;
+    text-align: center;
+}
+.tooltip {
+    background: none repeat scroll 0 0 #595959;
+    border-radius: 3px 3px 3px 3px;
+    bottom: 17px;
+    color: #FFFFFF;
+    display: none;
+    padding: 4px 8px;
+    position: absolute;
+    right: -10px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 10;
+}
+.gray-bg {
+    background: none repeat scroll 0 0 #F4F4F4;
+    display: inline-block;
+    padding: 3px 11px;
+}
+.my-mean-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1281px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    width: 119px;
+}
+.my-mean-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1312px transparent;
+}
+.my-mean-btn2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -98px -1919px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    width: 95px;
+}
+.my-mean-btn2:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -98px -1951px transparent;
+}
+.ico-phone {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -289px -1386px transparent;
+    display: inline-block;
+    float: left;
+    height: 16px;
+    margin-top: 3px;
+    width: 12px;
+}
+.other-pro {
+    background: url("../images/other_pro_bg.jpg") repeat-y scroll 0 0 transparent;
+    border: 1px solid #EDEDED;
+    min-height: 106px;
+    overflow: hidden;
+    position: relative;
+}
+.other-pro-left {
+    left: 0;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    width: 75px;
+}
+.change {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -286px -696px transparent;
+    display: inline-block;
+    height: 17px;
+    width: 13px;
+}
+.other-pro-rig {
+    padding-left: 120px;
+    padding-right: 10px;
+}
+.map2 img {
+    border-right: medium none;
+}
+.w275 {
+    width: 275px;
+}
+.plan-box li {
+    border: 1px solid #E7E7E7;
+    display: inline;
+    float: left;
+    margin-right: 12px;
+}
+.plan-box-top {
+    padding: 6px;
+}
+.plan-box-bom {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-top: 1px solid #E7E7E7;
+    padding-left: 168px;
+}
+.att-problem {
+    padding-left: 42px;
+    position: relative;
+}
+.att-problem-left {
+    left: 0;
+    position: absolute;
+    top: 5px;
+}
+.plan-btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1343px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 37px;
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    width: 185px;
+}
+.plan-btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1381px transparent;
+}
+.ico-edit {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -277px -1408px transparent;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    width: 23px;
+}
+.ico-del {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -277px -1430px transparent;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    width: 23px;
+}
+.ico-deta {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -277px -1452px transparent;
+    display: inline-block;
+    float: left;
+    height: 22px;
+    width: 23px;
+}
+.line-h22 {
+    line-height: 22px;
+}
+.line-h18 {
+    line-height: 18px;
+}
+.ico-map {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -279px -1478px transparent;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    line-height: 21px;
+    text-align: center;
+    width: 22px;
+}
+.ico-map2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -279px -1544px transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    line-height: 19px;
+    text-align: center;
+    width: 21px;
+}
+.ico-map3 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -205px -1230px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    vertical-align: middle;
+    width: 58px;
+}
+.ico-map3:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -205px -1254px transparent;
+}
+.set-top {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-bottom: 1px solid #E1E1E1;
+    padding: 15px 15px 0;
+}
+.set-nav {
+    margin-bottom: -2px;
+    overflow: hidden;
+}
+.set-nav li.act02 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1469px transparent;
+    float: left;
+}
+.set-nav li.act02 a {
+    background: url("../images/sprite/sprite.png") no-repeat scroll right -1506px transparent;
+    color: #3A3A3A;
+    display: block;
+    margin: 0 0 0 13px;
+    padding: 12px 28px 10px 16px;
+}
+.set-nav li {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1545px transparent;
+    float: left;
+}
+.set-nav li a {
+    background: url("../images/sprite/sprite.png") no-repeat scroll right -1582px transparent;
+    color: #3A3A3A;
+    display: block;
+    margin: 0 0 0 13px;
+    padding: 12px 28px 10px 16px;
+}
+.smset-nav {
+    border-left: 1px solid #E5E5E5;
+    margin-left: 1px;
+    overflow: hidden;
+}
+.smset-nav li {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-bottom: 1px solid #E5E5E5;
+    border-right: 1px solid #E5E5E5;
+    border-top: 1px solid #E5E5E5;
+    display: inline-block;
+    float: left;
+    padding: 7px 14px;
+}
+.smset-nav li.act03 {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.third li {
+    float: left;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+.w190 {
+    width: 240px;
+}
+.ico-xinlang {
+    background: url("../images/sprite/other.jpg") no-repeat scroll -220px 0 transparent;
+    display: inline-block;
+    height: 66px;
+    width: 80px;
+}
+.ico-qq {
+    background: url("../images/sprite/other.jpg") no-repeat scroll -220px -66px transparent;
+    display: inline-block;
+    height: 66px;
+    width: 80px;
+}
+.ico-rr {
+    background: url("../images/sprite/other.jpg") no-repeat scroll -220px -132px transparent;
+    display: inline-block;
+    height: 66px;
+    width: 80px;
+}
+.traffic-btn {
+    background: url("../images/sprite/other.jpg") no-repeat scroll 0 -200px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 41px;
+    width: 149px;
+}
+.traffic-btn:hover {
+    background: url("../images/sprite/other.jpg") no-repeat scroll 0 -242px transparent;
+}
+.baike-btn {
+    background: url("../images/sprite/other.jpg") no-repeat scroll -151px -200px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 41px;
+    width: 149px;
+}
+.baike-btn:hover {
+    background: url("../images/sprite/other.jpg") no-repeat scroll -151px -242px transparent;
+}
+.cheap-btn {
+    background: url("../images/sprite/other.jpg") no-repeat scroll 0 -284px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 41px;
+    width: 149px;
+}
+.cheap-btn:hover {
+    background: url("../images/sprite/other.jpg") no-repeat scroll 0 -326px transparent;
+}
+.note-btn {
+    background: url("../images/sprite/other.jpg") no-repeat scroll -151px -284px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 41px;
+    width: 149px;
+}
+.note-btn:hover {
+    background: url("../images/sprite/other.jpg") no-repeat scroll -151px -326px transparent;
+}
+.new-list li {
+    line-height: 30px;
+}
+.ico-selected {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -238px -1487px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    width: 15px;
+}
+.ico-selected-no {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -256px -1487px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    width: 15px;
+}
+.baike-list {
+    line-height: 22px;
+}
+.baike h2 {
+    font-family: "Microsoft YaHei";
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.baike h3 {
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.baike h4 {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.blue-bg, .blue-bg2 {
+    background: none repeat scroll 0 0 #E5F3FF;
+}
+.blue-bg {
+    padding: 7px 10px 7px 20px;
+}
+.show-list {
+    left: 125px;
+    position: absolute;
+    top: 9px;
+}
+.show-list4 {
+    left: 320px;
+    position: absolute;
+    top: 25px;
+}
+.show-list3 {
+    line-height: 24px;
+    padding-left: 5px;
+    position: absolute;
+    top: 16px;
+}
+.show-list3 li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #EFEFEF;
+    border-color: #D4E2EF #D4E2EF -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    padding: 0 5px;
+}
+.show-list3 li.act04 {
+    background: none repeat scroll 0 0 #F1F8FE;
+}
+.section-bor2 {
+    border-bottom: 1px solid #D4E2EF;
+}
+.section-bor3 {
+    border-bottom: 1px solid #D4E2EF;
+    position: absolute;
+    top: 40px;
+    width: 230px;
+}
+.show-list li, .show-list4 li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #EFEFEF;
+    border-color: #E1E1E1 #E1E1E1 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 7px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.show-list li.act04, .show-list4 li.act04 {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.ibox {
+    height: 200px;
+    left: 45px;
+    overflow: hidden;
+    position: relative;
+    width: 613px;
+}
+.showbox {
+    height: 170px;
+    left: 3px;
+    position: absolute;
+}
+.go-album-list {
+    height: 170px;
+    margin-bottom: 20px;
+}
+.go-album-list li {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 1px 1px 2px #909090;
+    float: left;
+    padding: 22px 16px 9px;
+    position: relative;
+}
+.go-album-list li img {
+    padding: 2px;
+    position: relative;
+}
+.been-bg {
+    background: none repeat scroll 0 0 #000000;
+    height: 14px;
+    left: 19px;
+    opacity: 0.5;
+    padding: 3px;
+    position: absolute;
+    text-align: center;
+    top: 104px;
+    width: 93px;
+}
+.been-bg-p {
+    padding: 0 5px;
+    position: absolute;
+    text-align: center;
+    top: 106px;
+    z-index: 9;
+}
+.ico-l {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1621px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 53px;
+    left: 0;
+    position: absolute;
+    top: 90px;
+    width: 29px;
+}
+.ico-l:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -29px -1621px transparent;
+}
+.ico-rig {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -58px -1621px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 53px;
+    left: 670px;
+    position: absolute;
+    top: 90px;
+    width: 29px;
+}
+.ico-rig:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -87px -1621px transparent;
+}
+.pl50 {
+    padding-left: 50px;
+}
+.slider {
+    background: url("../images/sprite/sprite.png") repeat-x scroll 0 -1423px transparent;
+    height: 15px;
+    margin-left: 200px;
+    position: relative;
+    width: 244px;
+}
+.slider-show {
+    background: url("../images/sprite/sprite.png") repeat-x scroll 0 -1442px transparent;
+    height: 15px;
+}
+.slider b {
+    left: 250px;
+    position: absolute;
+    top: 0;
+}
+.wantgo-list li {
+    float: left;
+    margin-left: 7px;
+    margin-top: 7px;
+    position: relative;
+}
+.wantgo-list li .bg01 {
+    background: none repeat scroll 0 0 #333333;
+    bottom: 0;
+    height: 29px;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+}
+.wantgo-list li .top-txt {
+    bottom: 8px;
+    color: #FFFFFF;
+    left: 15px;
+    position: absolute;
+    z-index: 999;
+}
+.wantgo-list li .p {
+    bottom: 10px;
+    left: 15px;
+    position: absolute;
+}
+.wantgo-list li.big {
+    height: 353px;
+    overflow: hidden;
+    width: 353px;
+}
+.wantgo-list li.sma {
+    height: 173px;
+    overflow: hidden;
+    width: 173px;
+}
+.ml7 {
+    margin-left: 7px;
+}
+.mt7 {
+    margin-top: 7px;
+}
+.w688 {
+    width: 688px;
+}
+.album-bg {
+    background: url("../images/albums_bg.jpg") repeat-y scroll 0 0 transparent;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    width: 980px;
+}
+.albun-search {
+    background: url("../images/albums_search.jpg") repeat-x scroll 0 0 transparent;
+    margin: 0 auto;
+    width: 780px;
+}
+.city-list li {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    height: 240px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+.city-list2 {
+    overflow: hidden;
+}
+.city-list2 li {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 10px;
+}
+.w266 {
+    width: 266px;
+}
+.w117 {
+    width: 117px;
+}
+.album-left {
+    width: 612px;
+}
+.album-rig {
+    width: 287px;
+}
+.bg-white {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.albums-photo {
+    border: 1px solid #EDEDED;
+    display: table;
+    font-size: 280px;
+    height: 322px;
+    margin: 20px auto;
+    overflow: hidden;
+    text-align: center;
+    width: 448px;
+}
+.albums-photo span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.city-search em {
+    float: left;
+}
+.area-type {
+    height: 50px;
+    position: relative;
+}
+.area-type li {
+    float: left;
+}
+.pr8 {
+    padding-right: 8px;
+}
+.area-type-left {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -202px -1200px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    left: 8px;
+    position: absolute;
+    top: 60px;
+    width: 14px;
+}
+.area-type-left:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -216px -1200px transparent;
+}
+.area-type-rig {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -230px -1200px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    width: 14px;
+}
+.area-type-rig:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -244px -1200px transparent;
+}
+.card-new-bg {
+    background: url("../images/card_new/card_new_inedx.jpg") repeat-y scroll 0 0 transparent;
+    width: 980px;
+}
+.aside-box_n {
+    background: none repeat scroll 0 0 #F1F8FE;
+    border-top-left-radius: 8px;
+    left: 0;
+    padding: 5px 15px 7px;
+    position: absolute;
+    top: -6px;
+    width: 245px;
+}
+.buy-type {
+    bottom: 10px;
+    float: left;
+    left: 16px;
+    position: absolute;
+    width: 245px;
+}
+.hd_n {
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    line-height: 34px;
+}
+.main-list_n li {
+    background: url("../images/card_new/car_sprite.gif") repeat scroll 0 0 transparent;
+    font-size: 14px;
+    height: 37px;
+    line-height: 37px;
+    padding-left: 35px;
+}
+.main-list_n li.par {
+    background-position: 0 -49px;
+}
+.main-list_n li.par2 {
+    background-position: 0 -48px;
+}
+.main-list_n li.tra {
+    background-position: 0 -86px;
+}
+.main-list_n li.tra2 {
+    background-position: 0 -85px;
+}
+.main-list_n li.order {
+    background-position: 0 -123px;
+}
+.main-list_n li.car {
+    background-position: 0 -123px;
+}
+.main-list_n li.hel {
+    background-position: 0 -160px;
+}
+.bot {
+    margin-bottom: 15px;
+}
+.buycardbtn, .app_btn {
+    overflow: hidden;
+}
+.buycardbtn li, .app_btn li {
+    float: left;
+}
+.app_btn li {
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+.app_btn li a {
+    color: #666666;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+}
+.app_btn li a:hover {
+    text-decoration: none;
+}
+.buycard_btn {
+    background: url("../images/card_new/buycar_sprite.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 30px;
+    width: 121px;
+}
+.buycard_btn:hover {
+    background: url("../images/card_new/buycar_sprite.png") no-repeat scroll 0 -31px transparent;
+    float: left;
+}
+.acticard_btn {
+    background: url("../images/card_new/buycar_sprite.png") no-repeat scroll -121px 0 transparent;
+    cursor: pointer;
+    height: 30px;
+    width: 121px;
+}
+.acticard_btn:hover {
+    background: url("../images/card_new/buycar_sprite.png") no-repeat scroll -121px -31px transparent;
+    float: left;
+}
+.appbtn_btn {
+    background: url("../images/card_new/sprites.gif") no-repeat scroll 0 -336px transparent;
+    cursor: pointer;
+    height: 35px;
+    width: 123px;
+}
+.appbtn_btn:hover {
+    background: url("../images/card_new/sprites.gif") no-repeat scroll -124px -336px transparent;
+    cursor: pointer;
+    height: 35px;
+    width: 123px;
+}
+.w90 {
+    width: 90px;
+}
+.list_e {
+    width: 650px;
+}
+.hd h3 {
+    border-bottom: 1px solid #D4E2EF;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.hd i {
+    float: right;
+    font-family: "宋体";
+    font-size: 12px;
+    margin-top: 10px;
+}
+.hd b {
+    float: right;
+    font-family: "'Tahoma','simsun'";
+    font-size: 14px;
+    margin-right: 20px;
+    margin-top: 6px;
+}
+.hd span {
+    font-family: "宋体";
+    font-size: 12px;
+    margin-top: 10px;
+}
+.aside_n {
+    float: left;
+    padding: 15px 9px 15px 15px;
+    width: 251px;
+}
+.aside_n h3 {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+}
+.pd10 {
+    padding: 10px 5px;
+}
+.ticker-ipt {
+    float: left;
+    width: 140px;
+}
+.ticker-ipt .card-ipt {
+    color: #666666;
+    margin-bottom: 12px;
+    width: 142px;
+}
+.buy-card-new {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll -56px -285px transparent;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    height: 27px;
+    line-height: 27px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 144px;
+}
+.new_s {
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    width: 240px;
+}
+.m-i-list li {
+    height: 60px;
+}
+.m-i-list li .l {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll -143px 0 transparent;
+    color: #FFFFFF;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 28px;
+}
+.m-i-list li .mes {
+    padding-left: 37px;
+}
+.m-i-list li h5 {
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    height: 28px;
+    line-height: 28px;
+}
+.gd-i-list li {
+    font-size: 12px;
+    height: 50px;
+}
+.gd-i-list li .l {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll -195px 0 transparent;
+    color: #FFFFFF;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 25px;
+    margin-top: 5px;
+    text-align: center;
+    width: 25px;
+}
+.gd-i-list li .mes {
+    padding-left: 30px;
+}
+.gd-i-list li h5 {
+    color: #000000;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    height: 18px;
+    line-height: 22px;
+}
+.main-imgtxt-list li {
+    height: 70px;
+}
+.main-imgtxt-list li img {
+    position: absolute;
+}
+.main-imgtxt-list li .mes {
+    line-height: 22px;
+    padding-left: 57px;
+}
+.main-imgtxt-list li h5 {
+    height: 20px;
+}
+.main-imgtxt-list li p {
+    color: #8A8A8A;
+    font-size: 12px;
+}
+.main-list {
+    line-height: 25px;
+}
+.main-list li {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll -257px 0 transparent;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 12px;
+}
+.article_n {
+    float: left;
+    padding-left: 20px;
+    padding-top: 15px;
+    width: 670px;
+}
+.card {
+    height: 140px;
+    margin: 15px;
+}
+.card img {
+    float: left;
+    position: absolute;
+}
+.card .mes {
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 220px;
+}
+.card_call {
+    padding-top: 15px;
+    width: 410px;
+}
+.card_call .l {
+    float: left;
+    width: 220px;
+}
+.card_call .rig {
+    float: left;
+    width: 150px;
+}
+.card h2 {
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    height: 26px;
+    line-height: 26px;
+}
+.card p {
+    font-size: 14px;
+    line-height: 24px;
+}
+.card p span.rig {
+    background: none repeat scroll 0 0 red;
+    display: inline;
+    float: right;
+}
+.ico {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll -182px 0 transparent;
+    height: 16px;
+    width: 22px;
+}
+.line_n {
+    background: url("../images/card_new/line_n.gif") no-repeat scroll 0 0 transparent;
+    line-height: 23px;
+}
+.line_n span {
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 3px;
+}
+.card_good {
+    color: #424242;
+    line-height: 25px;
+    margin: 0 auto;
+    width: 652px;
+}
+.card_good_title {
+    background: url("../images/card_new/card_ad.jpg") no-repeat scroll -30px 0 transparent;
+    height: 22px;
+    line-height: 22px;
+    text-align: right;
+    width: 637px;
+}
+.card_good li {
+    margin-top: 10px;
+    overflow: hidden;
+}
+.list-cont-box {
+    overflow: hidden;
+    padding: 10px 0 0;
+    width: 660px;
+}
+.list-cont-box li {
+    border: 1px solid #FFFFFF;
+    float: left;
+    height: 185px;
+    margin: 0 15px 0 0;
+    padding: 4px 0 0 4px;
+    position: relative;
+    width: 144px;
+}
+.list-cont-box li:hover {
+    border: 1px solid #FFFFFF;
+}
+.list-cont-box li h4 {
+    color: #0080C9;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+    text-align: left;
+}
+.list-cont-box li p {
+    clear: both;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 2px;
+}
+.list-cont-box li b {
+    color: #FF5200;
+    font-family: 'Tahoma','simsun';
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 6px;
+}
+.list-cont-hot {
+    color: #E27135;
+    padding-left: 4px;
+}
+.list-cont-hot a {
+    margin: 0 4px;
+}
+.list-cont-box3 {
+    overflow: hidden;
+    padding: 10px 0 0;
+    width: 670px;
+}
+.list-cont-box3 li {
+    border: 1px solid #FFFFFF;
+    float: left;
+    height: 210px;
+    margin: 0 15px 0 0;
+    padding: 4px 0 0 4px;
+    position: relative;
+    width: 200px;
+}
+.list-cont-box3 h3 {
+    font-size: 15px;
+}
+.list-cont-box3 h3 a {
+    color: #000000;
+}
+.list-cont-box3 li:hover {
+    border: 1px solid #FFFFFF;
+}
+.list-cont-box3 li h4 {
+    color: #FF6B00;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: left;
+}
+.list-cont-box3 li h4 span {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.list-cont-box3 li p {
+    clear: both;
+    color: #666666;
+    font-size: 12px;
+    line-height: 22px;
+    padding-left: 2px;
+}
+.list-img {
+    background: url("../images/card_new/sprites.gif") no-repeat scroll -38px 0 transparent;
+    height: 62px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 62px;
+    z-index: 10;
+}
+.pri {
+    padding-left: 6px;
+}
+.pri li .l {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll 0 -285px transparent;
+    color: #FFFFFF;
+    float: left;
+    height: 49px;
+    line-height: 20px;
+    text-align: center;
+    width: 50px;
+}
+.pri li .turn {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll 0 -394px transparent;
+    color: #FFFFFF;
+    float: left;
+    height: 49px;
+    line-height: 22px;
+    text-align: center;
+    width: 50px;
+}
+.pri li .turn span {
+    color: #5EC3E7;
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    height: 29px;
+    line-height: 29px;
+}
+.pri li p span {
+    color: #5EC3E7;
+    font-family: "Microsoft YaHei";
+    font-size: 22px;
+    line-height: 22px;
+}
+.pri li .r {
+    line-height: 16px;
+    padding-left: 60px;
+}
+.pri li .r a {
+    display: inline-block;
+    padding: 5px;
+}
+.sce_time {
+    overflow: hidden;
+    padding: 5px 0 10px;
+}
+.sce_time img {
+    padding: 5px 1px 5px 4px;
+}
+.sce_time img a {
+    border: 1px solid red;
+}
+.banner {
+    height: 250px;
+    position: relative;
+    width: 705px;
+}
+.banner-list {
+    bottom: 20px;
+    position: absolute;
+    right: 20px;
+}
+.banner-list li {
+    background: none repeat scroll 0 0 #2D393D;
+    cursor: pointer;
+    float: left;
+    font-size: 0;
+    height: 4px;
+    margin-left: 6px;
+    width: 23px;
+}
+.banner-list li.act06 {
+    background: none repeat scroll 0 0 #F98518;
+}
+.slide-map-ico3 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -497px transparent;
+    height: 7px;
+    position: absolute;
+    right: -7px;
+    top: 0;
+    width: 7px;
+}
+.button_gdtel {
+    font-size: 12px;
+}
+.button_gdtel h4 {
+    color: #000000;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+}
+.button_gdtel_btn {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1200px transparent;
+    cursor: pointer;
+    height: 26px;
+    line-height: 24px;
+    width: 100px;
+}
+.button_gdtel_btn:hover {
+    background: url("../images/sprite/sprite.png") no-repeat scroll 0 -1227px transparent;
+}
+.sub-nav {
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.sub-nav li {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    float: left;
+    margin-right: 10px;
+    padding: 5px 10px;
+}
+.sub-nav li.act12 {
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #E7E7E7;
+    float: left;
+    margin-right: 10px;
+    padding: 5px 10px;
+}
+.place-left {
+    float: right;
+    padding: 0 10px;
+    width: 285px;
+}
+.place-rig {
+    float: left;
+    overflow: hidden;
+    width: 634px;
+}
+.travel {
+    overflow: hidden;
+}
+.travel li {
+    float: left;
+    height: 29px;
+}
+.travel li, .travel li.car, .travel li.bus, .travel li.foot, .travel li.car:hover {
+    background: url("../images/travel.jpg") no-repeat scroll 0 0 transparent;
+}
+.travel li.car {
+    background-position: 0 0;
+    width: 52px;
+}
+.travel li.car:hover, .travel li.car-act13 {
+    background-position: 0 -31px;
+    width: 52px;
+}
+.travel li.bus {
+    background-position: -52px 0;
+    width: 51px;
+}
+.travel li.foot {
+    background-position: -103px 0;
+    width: 51px;
+}
+.travel li.bus-act14 {
+    background-position: -52px -31px;
+    width: 51px;
+}
+.travel li.foot-act15 {
+    background-position: -103px -31px;
+    width: 51px;
+}
+.lit-border, .lit-border2, .arrow {
+    background: none repeat scroll 0 0 #F1F1F1;
+    border: 1px solid #E7E7E7;
+    padding: 6px;
+}
+.lit-border {
+    height: 253px;
+    overflow-y: scroll;
+}
+.arrow {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+}
+.letter {
+    background: none repeat scroll 0 0 #69C14C;
+    border: 1px solid #01902C;
+    border-radius: 18px 18px 18px 18px;
+    box-shadow: 0 0 3px #A6A6A6;
+    color: #000000;
+    display: inline-block;
+    height: 18px;
+    text-align: center;
+    width: 18px;
+}
+.show-list2 {
+    height: 24px;
+    overflow: hidden;
+}
+.show-list2 li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #EFEFEF;
+    border-color: #E1E1E1 #E1E1E1 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 7px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.show-list2 li.act04 {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.use-photo {
+    overflow: hidden;
+}
+.w760 {
+    width: 760px;
+}
+.use-photo img {
+    display: block;
+}
+.use-photo a {
+    padding: 0;
+}
+.use-photo li {
+    cursor: pointer;
+    float: left;
+    margin-bottom: 12px;
+    padding-right: 18px;
+}
+.use-photo a:hover {
+    text-decoration: none;
+}
+.use-photo a.name {
+    line-height: 20px;
+    text-align: center;
+}
+.ico-selected2 {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -238px -1487px transparent;
+    display: inline-block;
+    height: 14px;
+    margin-left: 60px;
+    margin-top: -14px;
+    width: 15px;
+}
+.ico-selected2-no {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -256px -1487px transparent;
+    display: inline-block;
+    height: 14px;
+    margin-left: 60px;
+    margin-top: -14px;
+    width: 15px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+.ico-selected2-gray {
+    background: url("../images/sprite/sprite.png") no-repeat scroll -238px -1470px transparent;
+    display: inline-block;
+    height: 14px;
+    margin-left: 60px;
+    margin-top: -14px;
+    width: 15px;
+}
+.global-top {
+    border: 1px solid #D4E2EF;
+    overflow: hidden;
+    padding: 10px;
+}
+.global-top img {
+    position: absolute;
+}
+.global-top .rank {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    font-weight: bold;
+    margin: 3px 0 5px 60px;
+}
+.global-top .rank i {
+    float: right;
+}
+.show {
+    background: url("../images/show.jpg") no-repeat scroll right center transparent;
+    display: inline-block;
+    height: 24px;
+}
+.graph-top-one, .graph-bottom-one, .graph-left-one, .graph-right-one {
+    background: url("../images/sprite/graph.png") no-repeat scroll 0 0 transparent;
+}
+.graph-top-one, .graph-bottom-one {
+    height: 11px;
+    width: 19px;
+}
+.graph-left-one, .graph-right-one {
+    height: 19px;
+    width: 11px;
+}
+.graph-top-one {
+    background-position: 0 0;
+    left: 25px;
+    position: absolute;
+    top: -11px;
+}
+.graph-bottom-one {
+    background-position: 0 -11px;
+    bottom: -11px;
+    left: 25px;
+    position: absolute;
+}
+.graph-left-one {
+    background-position: 0 -22px;
+    left: -11px;
+    position: absolute;
+    top: 25px;
+}
+.graph-right-one {
+    background-position: -10px -22px;
+    position: absolute;
+    right: -11px;
+    top: 25px;
+}
+.down-banner {
+    margin: 0 auto;
+    position: relative;
+    width: 980px;
+}
+.down-ban-btn {
+    bottom: 20px;
+    position: absolute;
+    right: 20px;
+}
+.down-ban-btn li {
+    background: none repeat scroll 0 0 #2D393D;
+    cursor: pointer;
+    float: left;
+    font-size: 0;
+    height: 4px;
+    margin-left: 6px;
+    width: 23px;
+}
+.down-ban-btn li.act13 {
+    background: none repeat scroll 0 0 #F47E3E;
+    cursor: pointer;
+}
+.mishu {
+    clear: both;
+}
+.mishu li {
+    float: left;
+    height: 250px;
+    margin-right: 20px;
+    padding: 10px;
+    width: 200px;
+}
+.mishu h2 {
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+.mishu p {
+    color: #666666;
+    line-height: 20px;
+}
+.ex_main-list {
+    line-height: 25px;
+}
+.ex_main-list dd {
+    background: url("../images/card_new/car_sprite.gif") no-repeat scroll -257px 0 transparent;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 12px;
+}

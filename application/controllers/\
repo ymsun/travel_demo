@@ -1,0 +1,261 @@
+<?php
+class Show extends CI_Controller {
+	function __construct(){
+		parent::__construct();
+		$this->load->library('api');
+		$this->apihost = $this->config->item('api_host');
+	
+	}
+	
+	function _reid($arrs){
+		$ret = array();
+		foreach($arrs as $k =>$v){
+			$ret[$v['id']] = $v;
+		}
+		return $ret;
+	}
+
+	function _retude($tude){
+		$ret = $tude;//3600000;
+		return $ret;
+	
+	}
+	function _json_to_array($web){
+			$arr=array();
+			foreach($web as $k=>$w){
+					if(is_object($w)) {
+						$arr[$k]= $this->_json_to_array($w); //判断类型是不是object
+					}else {
+						$arr[$k]=$w;
+					}
+			}
+			return $arr;
+	}
+
+	
+	function index(){		
+		//echo $this->config->item('api_host');
+
+		$prolist = $this->api->request($this->apihost.'/provinces');
+		$prolist['httpcode']== 200 ?$prolist = $prolist['data']['items']:exit('api error');
+		$prolist = $this->_reid($prolist);
+
+		if(isset($_GET['cid'])&&strlen($_GET['cid'])){
+			$pid = $this->api->request($this->apihost.'/getpidbycid/'.(int)$_GET['cid']);
+			$pid = $pid['data']['items']['0']['pid'];
+			$cid = (int)$_GET['cid'];
+		}
+		elseif(isset($_GET['pid'])&&strlen($_GET['pid'])){
+
+			$pid = (int)$_GET['pid'];
+
+
+		}
+		else{
+			$pid = 2;
+		
+		}
+		//cid 优先，有cid先取cid ，没有的话再取pid，再没有取默认pid =2 
+
+		$citylist = $this->api->request($this->apihost.'/province/'.$pid.'/cities');
+		$citylist['httpcode']== 200 ?$citylist = $citylist['data']['items']:exit('api error');
+		$citylist = $this->_reid($citylist);
+
+		if(isset($_GET['cid'])&&strlen($_GET['cid'])){
+			$cid = (int)$_GET['cid'];
+		}
+		else{
+			$cid = array_rand($citylist);
+		}
+		// info of pro
+		$pro_info = $prolist[$pid];
+
+		//info if city
+		
+		$arealist = $this->api->request($this->apihost.'/city/'.$cid.'/areas');
+		$arealist['httpcode']== 200 ?$arealist = $arealist['data']['items']:exit('api error');
+		$arrmap = array();
+		$road = array();
+		$length = 0;
+		if(count($arealist)){
+			$centtude = array(
+				'long' => '0',
+				'lati' => '0',
+			);
+			foreach($arealist as $k =>$v){
+				$arealist[$k]['hid'] = (int)($k+1);
+				if($k >3){
+					//unset($arealist[$k]);
+				}
+				//$arealist[$k]['longitude'] = $this->_retude($v['latitude']);
+				//$arealist[$k]['latitude'] = $this->_retude($v['longitude']);
+				$centtude['long'] += $arealist[$k]['lgt'];
+				$centtude['lati'] += $arealist[$k]['lat'];
+				$arrmap[] = array(
+					'title' => $v['name'],
+					'content' =>$v['abstract'],
+					'point' =>$arealist[$k]['lat'].'|'.$arealist[$k]['lgt'],
+					'image' =>$v['image'],
+				);
+				$road[$arealist[$k]['lat'].'|'.$arealist[$k]['lgt']]= $v['name'];  
+				if($arealist[$k]['lat']=="" || $arealist[$k]['lgt']==""||$arealist[$k]['lat']==0){
+					$length++;
+				}
+			}
+			$chear = count($arealist)-$length;
+			if($chear==0) $chear = 1;
+			$centtude['long'] = $centtude['long']/$chear;
+			$centtude['lati'] = $centtude['lati']/$chear;
+		}
+		else{
+			$centtude = array(
+				'long' => '39.921901',
+				'lati' => '116.403023',
+			);
+
+		}
+		$roadsel = array(
+'start' => $this->api->html_select($road,'start','start'),
+'end' => $this->api->html_select($road,'end','end'),
+
+		);
+
+		$data = array(
+			'prolist' =>$prolist,
+			'citylist' =>$citylist,
+			'pro_info' =>$pro_info,
+			'arealist' =>$arealist,
+			'jsonmap'  =>json_encode($arrmap),
+			'cent'    => $centtude,
+			'road' =>$roadsel,
+			'pid' =>$pid,
+			'cid' =>$cid,
+
+		);
+
+		//echo "<pre>"; print_r($arealist);exit;
+
+
+		$this->smarty->view('areas.tpl',$data);
+	}
+	function showarea(){		
+		strlen($_GET['aid']) ? $aid = (int)$_GET['aid'] : exit('No aid ,exit');
+		$areainfo = $this->api->request($this->apihost.'/area/'.$aid);
+		$ainfo = $areainfo['data']['items']['0'];
+		$scene_pic = json_decode($ainfo['scene_pic']);
+		$scene_pic = $this->_json_to_array($scene_pic[0]);
+
+		$scene_dining = json_decode($ainfo['dining']);
+		$scene_dining = $this->_json_to_array($scene_dining);
+
+		$scene_line = json_decode($ainfo['line']);
+		$scene_line = $this->_json_to_array($scene_line['list']);
+
+		print_r($scene_line);
+
+		$scene_traffic = json_decode($ainfo['traffic']);
+		$scene_traffic = $this->_json_to_array($scene_traffic);
+		$scene_traffic = $this->_json_to_array($scene_traffic['local']);
+		$scenicinfo = $this->api->request($this->apihost.'/area/'.$aid.'/scenics');
+		$sinfo = $scenicinfo['data']['items'];
+		$arrmap = array();
+		$length = 0;
+		if(count($sinfo)>0){
+			$centtude = array(
+				'long' => '0',
+				'lati' => '0',
+			);
+			foreach($sinfo as $k => $v){
+				//$sinfo[$k]['longitude'] = $this->_retude($v['latitude']);
+				//$sinfo[$k]['latitude'] = $this->_retude($v['longitude']);
+				$centtude['long'] += $sinfo[$k]['lgt'];
+				$centtude['lati'] += $sinfo[$k]['lat'];
+				$arrmap[] = array(
+					'title' => $v['name'],
+					'content' =>$v['abstract'],
+					'point' =>$sinfo[$k]['lat'].'|'.$sinfo[$k]['lgt'],
+					'image' =>$v['image'],
+				);
+				if($sinfo[$k]['lat']=="" || $sinfo[$k]['lgt']==""||$sinfo[$k]['lat']==0){
+					$length++;
+				}
+			}
+			$chear = count($sinfo)-$length;
+			if($chear==0) $chear = 1;
+			$centtude['long'] = $centtude['long']/$chear;
+			$centtude['lati'] = $centtude['lati']/$chear;
+		
+		}
+		else{
+			$centtude = array(
+				'long' => '39.921901',
+				'lati' => '116.403023',
+			);
+
+		
+		}
+		foreach($sinfo as $k =>$v){
+			$sinfo[$k]['hid'] = $k+1;
+
+		}
+		$data = array(
+			'ainfo' =>$ainfo,
+			'sinfo'  =>$sinfo,
+			'cent'    => $centtude,
+			'jsonmap'  =>json_encode($arrmap),
+			'scene_pic' =>$scene_pic,
+			'scene_traffic' =>$scene_traffic, 
+			'scene_dining' =>$scene_dining, 
+			'scene_line' =>$scene_line, 
+
+		);
+		//echo "<pre>";var_dump($data);exit;
+		$this->smarty->view('area.tpl',$data);
+	}
+	function showpoints(){
+		strlen($_GET['sid'])  ? $sid = (int)$_GET['sid'] :NULL;
+		$points = $this->api->request($this->apihost.'/scenic/'.$sid.'/points');
+		$points = $points['data']['items'];
+		$arrmap = array();
+		if(count($points)){
+			$centtude = array(
+				'long' => '0',
+				'lati' => '0',
+			);
+			foreach($points as $k =>$v){
+				$points[$k]['hid'] = $k+1;
+				$points[$k]['longitude'] = $this->_retude($v['latitude']);
+				$points[$k]['latitude'] = $this->_retude($v['longitude']);
+				$centtude['long'] += $points[$k]['longitude'];
+				$centtude['lati'] += $points[$k]['latitude'];
+				$arrmap[] = array(
+					'title' => $v['name'],
+					'content' =>$v['note'],
+					'point' =>$points[$k]['latitude'].'|'.$points[$k]['longitude'],
+					'image' =>$v['image'],
+				);
+			}
+			$centtude['long'] = $centtude['long']/count($points);
+			$centtude['lati'] = $centtude['lati']/count($points);
+		
+			
+		}
+		else{
+			$centtude = array(
+				'long' => '39.921901',
+				'lati' => '116.403023',
+			);
+		
+		}
+		$data = array(
+			'points' =>$points,
+			'cent'    => $centtude,
+			'jsonmap'  =>json_encode($arrmap),
+
+		);
+		//echo "<pre>";print_r($data);exit;
+		$this->smarty->view('point.tpl',$data);
+
+	}
+
+}

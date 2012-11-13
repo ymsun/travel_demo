@@ -1,0 +1,71 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2012-10-24 12:17:52 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:17:52 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:17:56 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:17:56 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:18:00 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:18:00 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:22:26 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:22:26 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:22:28 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 12:22:28 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 14:42:59 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 14:42:59 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 14:43:51 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 14:43:51 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 15:25:16 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 15:25:16 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 18:47:27 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 18:47:27 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 18:47:27 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 18:47:30 --> Severity: Notice  --> Undefined index: tag /srv/letou/magazine/travel/travel_demo/application/var/smarty_templates_c/6ff1399165d901626cf3e5270867b108c1c44d09.file.area.tpl.php 85
+ERROR - 2012-10-24 18:47:30 --> Severity: Notice  --> Undefined index: type /srv/letou/magazine/travel/travel_demo/application/var/smarty_templates_c/6ff1399165d901626cf3e5270867b108c1c44d09.file.area.tpl.php 87
+ERROR - 2012-10-24 18:47:30 --> Severity: Notice  --> Undefined index: be_visit_time /srv/letou/magazine/travel/travel_demo/application/var/smarty_templates_c/6ff1399165d901626cf3e5270867b108c1c44d09.file.area.tpl.php 91
+ERROR - 2012-10-24 18:47:30 --> Severity: Notice  --> Undefined index: price_disc /srv/letou/magazine/travel/travel_demo/application/var/smarty_templates_c/6ff1399165d901626cf3e5270867b108c1c44d09.file.area.tpl.php 97
+ERROR - 2012-10-24 18:47:30 --> Severity: Notice  --> Undefined index: time /srv/letou/magazine/travel/travel_demo/application/var/smarty_templates_c/6ff1399165d901626cf3e5270867b108c1c44d09.file.area.tpl.php 99
+ERROR - 2012-10-24 18:47:34 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 18:47:34 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 20:59:57 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 20:59:57 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:15 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:15 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:18 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:18 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:32 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:32 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:45 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:45 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:57 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:00:57 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:12 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:12 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:24 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:24 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:37 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:37 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:47 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:01:47 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:04:27 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:04:29 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:04:29 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:04:46 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:04:46 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:04:56 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:04:56 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:08 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:08 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:17 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:17 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:22 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:22 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:28 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:28 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:35 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:35 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:41 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:41 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:48 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:06:48 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:08:40 --> 404 Page Not Found --> notfound/index
+ERROR - 2012-10-24 21:10:31 --> 404 Page Not Found --> notfound/index
