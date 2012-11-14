@@ -868,6 +868,35 @@ class Show extends CI_Controller {
 	function replace_cityname($name){
 		return preg_replace('/(市|地区|特别行政区|白族自治州)$/', '', trim($name));
 	}
+	function jiepang(){
+		$imagecity = $this->api->request($this->apihost.'/city');
+		print_r($imagecity);exit;
+		$imagecity['httpcode']== 200 ?$imagecity= $imagecity['data']:exit('api error');
+		$cid = isset($_GET['city'])?$_GET['city']:'北京';
+		$keyword = isset($_GET['keyword'])?$_GET['keyword']:'';
+		$keyword = str_replace(' ','%20',$keyword);
+		if($cid && $keyword){
+			$imagelist = $this->api->request($this->apihost.'/jiepang?city='.$cid.'&keyword='.$keyword);
+		}else{
+			$imagelist = $this->api->request($this->apihost.'/jiepang?city='.$cid);
+		}
+		$imagelist['httpcode']== 200 ?$imagelist = $imagelist['data']:exit('api error');
+		$keywordlist =  $this->api->request($this->apihost.'/jiepang/keyword?city='.$cid);
+		$keywordlist['httpcode']== 200 ?$keywordlist= $keywordlist['data']:exit('api error');
+		$imagecity = $this->api->request($this->apihost.'/city');
+		$imagecity['httpcode']== 200 ?$imagecity= $imagecity['data']:exit('api error');
+		print_r($imagelist);
+
+		$data = array(
+			'keyword' => $keyword,
+			'city' => $cid,
+			'imagecity' =>$imagecity,
+			'keywordlist' =>$keywordlist,
+			'imagelist' =>$imagelist,
+			);
+		//echo "<pre>";var_dump($data);exit;
+		$this->smarty->view('jiepang.tpl',$data);
+	}
 }
 ?>
 

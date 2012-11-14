@@ -78,6 +78,9 @@ $route['show/hotelimages'] = 'show/hotelimages';
 //restaurants list
 $route['show/restaurants'] = 'show/restaurants';
 $route['show/restimages'] = 'show/restimages';
+//jiepang list
+$route['show/jiepang'] = 'show/jiepang';
+$route['show/setjiepang'] = 'show/setjiepang';
 
 $route['mag_list/tag/(:any)(/p/(:num))?'] = 'magazine/magazines_tag/$1/$3';
 
