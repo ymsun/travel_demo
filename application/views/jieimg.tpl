@@ -86,7 +86,7 @@ $(function(){
   });
 });
 function choose(id){
-	var statue = $('.choose img')[0].src;
+	var statue = $('#img'+id+' img')[0].src;
 	var s = statue.substr(-5,1);
 	if(s=="w"){
 		s="r";
