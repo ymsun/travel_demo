@@ -78,9 +78,11 @@ $route['show/hotelimages'] = 'show/hotelimages';
 //restaurants list
 $route['show/restaurants'] = 'show/restaurants';
 $route['show/restimages'] = 'show/restimages';
-
-$route['mag_list/tag/(:any)(/p/(:num))?'] = 'magazine/magazines_tag/$1/$3';
-
+//jiepang list
+$route['show/jiepang'] = 'show/jiepang';
+$route['show/jiepangimg'] = 'show/jiepangimg';
+$route['show/setjieimg'] = 'show/setjieimg';
+$route['mag_list/tag/(:any)(/p/(:num))?'] = 'magazine/magazines_tag/$1/$3'; 
 $route['mag'] = 'magazine/magazine_home';
 
 $route['search/(all|magazine|author)/([^/]+?)(/p/(:num))?'] = 'search/index/$1/$2/$4';

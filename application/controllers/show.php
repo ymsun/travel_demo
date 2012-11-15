@@ -868,6 +868,67 @@ class Show extends CI_Controller {
 	function replace_cityname($name){
 		return preg_replace('/(市|地区|特别行政区|白族自治州)$/', '', trim($name));
 	}
+	function jiepang($cid='',$page=0){
+		$prolist = $this->api->request($this->apihost.'/provinces');
+		$prolist['httpcode']== 200 ?$prolist = $prolist['data']['items']:exit('api error1');
+		$prolist = $this->_reid($prolist);
+
+		if(isset($_GET['cid'])&&strlen($_GET['cid'])){
+			$pid = $this->api->request($this->apihost.'/getpidbycid/'.(int)$_GET['cid']);
+			$pid = $pid['data']['items']['0']['pid'];
+			$cid = (int)$_GET['cid'];
+		}
+		elseif(isset($_GET['pid'])&&strlen($_GET['pid'])){
+
+			$pid = (int)$_GET['pid'];
+
+
+		}
+		else{
+			$pid = 2;
+		
+		}
+		//cid 优先，有cid先取cid ，没有的话再取pid，再没有取默认pid =2 
+
+		$citylist = $this->api->request($this->apihost.'/province/'.$pid.'/cities');
+		$citylist['httpcode']== 200 ?$citylist = $citylist['data']['items']:exit('api error2');
+		$citylist = $this->_reid($citylist);
+		if($cid==''){
+			if(isset($_GET['cid'])&&strlen($_GET['cid'])){
+				$cid = (int)$_GET['cid'];
+			}
+			else{
+			$cid = array_rand($citylist);
+			}
+		}
+		// info of pro
+		$arealist = $this->api->request($this->apihost.'/city/'.$cid.'/newareas/'.$page);
+		$arealist['httpcode']== 200 ?$arealist = $arealist['data']['items']:exit('api error3');
+		$data = array(
+			'prolist' =>$prolist,
+			'citylist' =>$citylist,
+			'arealist' =>$arealist,
+			'cid' => $cid,
+			);
+		//echo "<pre>";var_dump($data);exit;
+		$this->smarty->view('jiepang.tpl',$data);
+	}
+	function jiepangimg(){
+		$id = $_GET['id'];	$placename = $_GET['name'];	
+		$placelist = $this->api->request($this->apihost.'/jiepangimg?id='.$id);
+		$placelist['httpcode']== 200 ?$placelist = $placelist['data']['items']:exit('api error3');
+		$data = array(
+			'placelist' =>$placelist,
+			'placename' =>$placename,
+			);
+		//echo "<pre>";var_dump($data);exit;
+		$this->smarty->view('jieimg.tpl',$data);
+	}
+	function setjieimg(){
+		$id = $_GET['id'];	$statue = $_GET['statue'];	
+		$pres = $this->api->request($this->apihost.'/setjieimg?id='.$id.'&statue='.$statue);
+		echo '<img src="/sta/images/bg/'.$statue.'.jpg" style="width:30px;">';
+	}
 }
 ?>
 
