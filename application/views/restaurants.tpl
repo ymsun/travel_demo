@@ -49,11 +49,13 @@
 {foreach from=$handle item=item key=key}
 	<span  style="width: 50px;"> 	{if $key eq $cityname}
 	{foreach from=$item  item=foodword key=type}
+	{if $type neq '美食聚集地'}
 	<font>{$type}:</font>
 		{foreach from=$foodword  item=value}
 		<font><a {if $keyword eq $value}style="color:red;" {/if}href="/show/restaurants?cid={$cid}&foodtype={$type}&keyword={$value}">{$value}</a></font>
 		{/foreach}
 	<br>
+	{/if}
 	{/foreach}
 	{/if}
 	</span>

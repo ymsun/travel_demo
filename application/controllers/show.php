@@ -784,12 +784,19 @@ class Show extends CI_Controller {
 		$cid = isset($_GET['cid'])? $_GET['cid']: '36'; 
 		$keyword = isset($_GET['keyword'])?$_GET['keyword']:'';
 		$foodtype = isset($_GET['foodtype'])?$_GET['foodtype']:'';
+		$keyword = explode('|',$keyword);
+		if(count($keyword)>1){
+		$keyword = $keyword[1];
+		}else{
+		$keyword = $keyword[0];
+		}
 		if($foodtype=='特色餐饮' ||$foodtype=='cuisines' ){
 			$foodtype='cuisines';
 		}else{
 			$foodtype='address';
 		}
 		if($cid && $keyword && $foodtype){
+		echo '实质查询的是---'.$keyword;
 			$rest = $this->api->request($this->apihost.'/restaurants/'.$cid.'/page/'.$page.'?foodtype='.$foodtype.'&keyword='.$keyword);
 		$config['base_url'] = 'http://travel.ymsun.in1001.com/show/restaurants?cid='.$cid.'&foodtype='.$foodtype.'&keyword='.$keyword;
 		}else{
