@@ -402,8 +402,8 @@ $config['mq_user'] = 'guest';
 $config['mq_pass'] = 'guest';
 
 
-$config['api_host'] = 'http://api.backtage.com';
-$config['web_host'] = 'http://backtage.com';
+$config['api_host'] = 'http://api.ymsun.in1001.com';
+$config['web_host'] = 'http://ymsun.in1001.com';
 
 $config['cookie_expire'] = '1209600';//cookie缓存时间,14天
 
