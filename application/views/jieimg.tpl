@@ -93,7 +93,7 @@ function choose(id){
 	}else{
 		s="w";
 	}
-	url = "http://backtage.com/show/setjieimg?id="+id+"&statue="+s;
+	url = "http://travel.ymsun.in1001.com/show/setjieimg?id="+id+"&statue="+s;
 	$.get(
 		url,
 		{},
