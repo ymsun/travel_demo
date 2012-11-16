@@ -923,6 +923,7 @@ class Show extends CI_Controller {
 		$data = array(
 			'placelist' =>$placelist,
 			'placename' =>$placename,
+			'webhost' => $this->webhost, 
 			);
 		//echo "<pre>";var_dump($data);exit;
 		$this->smarty->view('jieimg.tpl',$data);

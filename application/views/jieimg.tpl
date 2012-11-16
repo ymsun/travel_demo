@@ -78,6 +78,7 @@ hs.addSlideshow({
 		</div>
 	{/foreach}
 </div>
+	{literal}
 <script type="text/javascript">
 $(function(){
   $('#container').masonry({
@@ -93,7 +94,9 @@ function choose(id){
 	}else{
 		s="w";
 	}
-	url = "http://travel.ymsun.in1001.com/show/setjieimg?id="+id+"&statue="+s;
+	{/literal}
+	url = "{$webhost}/show/setjieimg?id="+id+"&statue="+s;
+	{literal}
 	$.get(
 		url,
 		{},
@@ -104,6 +107,7 @@ function choose(id){
 	);
 }
 </script>
+	{/literal}
 </body>
 </html>
 
