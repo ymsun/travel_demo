@@ -4,6 +4,7 @@ class Show extends CI_Controller {
 		parent::__construct();
 		$this->load->library('api');
 		$this->apihost = $this->config->item('api_host');
+		$this->webhost = $this->config->item('web_host');
 	
 	}
 	
@@ -729,6 +730,7 @@ class Show extends CI_Controller {
 	}
 	function restaurants($cid='',$page=0){
 		require_once('b.php');
+		require_once('tage.php');
 		//echo $this->config->item('api_host');
 		$prolist = $this->api->request($this->apihost.'/provinces');
 		$prolist['httpcode']== 200 ?$prolist = $prolist['data']['items']:exit('api error1');
@@ -784,12 +786,6 @@ class Show extends CI_Controller {
 		$cid = isset($_GET['cid'])? $_GET['cid']: '36'; 
 		$keyword = isset($_GET['keyword'])?$_GET['keyword']:'';
 		$foodtype = isset($_GET['foodtype'])?$_GET['foodtype']:'';
-		$keyword = explode('|',$keyword);
-		if(count($keyword)>1){
-		$keyword = $keyword[1];
-		}else{
-		$keyword = $keyword[0];
-		}
 		if($foodtype=='特色餐饮' ||$foodtype=='cuisines' ){
 			$foodtype='cuisines';
 		}else{
@@ -831,9 +827,9 @@ class Show extends CI_Controller {
 			'cityname' =>$cityname,
 			'rest' =>$rest,
 			'page' =>  $this->pagination->create_links(),
+			'tage' => $tage, 
 			'handle' => $handle, 
 			'keyword' => $keyword, 
-			
 			);
 		//echo "<pre>";var_dump($data);exit;
 		$this->smarty->view('restaurants.tpl',$data);
