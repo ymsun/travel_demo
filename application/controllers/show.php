@@ -794,10 +794,13 @@ class Show extends CI_Controller {
 		if($cid && $keyword && $foodtype){
 		echo '实质查询的是---'.$keyword;
 			$rest = $this->api->request($this->apihost.'/restaurants/'.$cid.'/page/'.$page.'?foodtype='.$foodtype.'&keyword='.$keyword);
+			$foodimg = $this->api->request($this->apihost.'/foodimg/'.$cid.'?keyword='.$keyword);
+		$foodimg['httpcode']== 200 ?$foodimg = $foodimg['data']['items']:exit('api error foodimg');
 		$config['base_url'] = 'http://travel.ymsun.in1001.com/show/restaurants?cid='.$cid.'&foodtype='.$foodtype.'&keyword='.$keyword;
 		}else{
 		$rest = $this->api->request($this->apihost.'/restaurants/'.$cid.'/page/'.$page);
 		$config['base_url'] = 'http://travel.ymsun.in1001.com/show/restaurants?cid='.$cid;
+		$foodimg ='';
 		}
 		$rows = $rest['data']['rows'];
 		$rest['httpcode']== 200 ?$rest = $rest['data']['items']:exit('api error3');
@@ -825,6 +828,7 @@ class Show extends CI_Controller {
 			'citylist' =>$citylist,
 			'cityerlist' =>$cityerlist,
 			'cityname' =>$cityname,
+			'foodimg' =>$foodimg,
 			'rest' =>$rest,
 			'page' =>  $this->pagination->create_links(),
 			'tage' => $tage, 

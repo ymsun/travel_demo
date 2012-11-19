@@ -69,8 +69,22 @@
 	left:0;
 	background:none repeat scroll 0 0 #333;
 }
+.caption{
+background-color: rgba(0, 0, 0, 0.6);
+font-size: 14px;
+line-height: 18px;
+color: white;
+left: 0;
+bottom: 0;
+width: 900px;
+position: absolute;
+z-index: 1;
+}
 </style>
 <div class="content">
+	{foreach from=$foodimg item=item key=key}
+	<div style="position:relative;"><img src="http://media.in1001.com/restimg/food/{$item.city_name}/{$item.cover}"/ style="width:900px;height:300px;"><span class="caption">{$item.intro}</span></div>
+	{/foreach}
 	<ul>
 		{foreach from=$rest item=item key=key}
 		<li style="float:left;width:300px;height:600px;margin:5px;position:relative;">
