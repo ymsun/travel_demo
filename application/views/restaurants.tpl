@@ -82,9 +82,11 @@ z-index: 1;
 }
 </style>
 <div class="content">
+	{if $foodimg}
 	{foreach from=$foodimg item=item key=key}
 	<div style="position:relative;"><img src="http://media.in1001.com/restimg/food/{$item.city_name}/{$item.cover}"/ style="width:900px;height:300px;"><span class="caption">{$item.intro}</span></div>
 	{/foreach}
+	{/if}
 	<ul>
 		{foreach from=$rest item=item key=key}
 		<li style="float:left;width:300px;height:600px;margin:5px;position:relative;">
