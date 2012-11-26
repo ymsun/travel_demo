@@ -75,6 +75,7 @@ hs.addSlideshow({
 			<a class='highslide' href='{$item.path}?size=600' onclick="return hs.expand(this)">
 <img src='{$item.path}' style="width:220px;height:200px;"/></a>	
 		<a href=javascript:; onclick="choose({$item.id});" ><div class="choose" id="img{$item.id}"><img src="/sta/images/bg/{$item.choose}.jpg" style="width:30px;"></div></a></a>
+		<a href="http://jiepang.com/photo/view?type=venu64853797e&id={$item.sid}" target="_blank">地址</a>
 		</div>
 	{/foreach}
 </div>

@@ -403,7 +403,7 @@ $config['mq_pass'] = 'guest';
 
 
 $config['api_host'] = 'http://travel.api.ymsun.in1001.com';
-$config['web_host'] = 'http://ymsun.in1001.com';
+$config['web_host'] = 'http://travel.ymsun.in1001.com';
 
 $config['cookie_expire'] = '1209600';//cookie缓存时间,14天
 
